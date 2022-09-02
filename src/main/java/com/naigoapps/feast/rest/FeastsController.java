@@ -24,6 +24,11 @@ public class FeastsController {
         return feasts;
     }
 
+    @GetMapping(path = "api/feasts/{id}")
+    public Feast getFeasts(@PathVariable("id") Long id) {
+        return repository.findById(id).orElse(null);
+    }
+
     @PostMapping(path = "api/feasts")
     public void addFeast(@RequestBody FeastCreateRequest request) {
         Feast feast = new Feast();

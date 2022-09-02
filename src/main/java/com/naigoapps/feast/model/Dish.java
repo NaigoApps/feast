@@ -1,14 +1,17 @@
 package com.naigoapps.feast.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "dishes")
 public class Dish extends BaseEntity {
 
-    private String name;
+    @ManyToOne
+    private Category category;
 
+    private String name;
     private double price;
 
     public String getName() {
@@ -25,5 +28,13 @@ public class Dish extends BaseEntity {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

@@ -17,13 +17,13 @@ export function OrdinationsComponent() {
 
     const {feastId} = useParams();
 
-    const [ordinations, setOrdinations] = useState<Array<Ordination>>([]);
+    const [feast, setFeast] = useState<Feast | null>(null);
     const [addingOrdination, setAddingOrdination] = useState(false);
 
     const reload = useCallback(() => {
         axios.get(`/api/feasts/${feastId}`)
             .then(result => {
-                setOrdinations(result.data);
+                setFeast(result.data);
             })
     }, []);
 
@@ -33,9 +33,8 @@ export function OrdinationsComponent() {
 
     return <Container>
         <Stack spacing={2}>
-            <Typography>Partecipanti</Typography>
             <Grid container spacing={2}>
-                {ordinations.map(ordination => (
+                {feast?.ordinations?.map(ordination => (
                     <Grid item xs={3}>
                         <OrdinationComponent feast={{id: parseInt(feastId!)}} ordination={ordination}
                                              onDelete={() => reload()}/>

@@ -4,10 +4,12 @@ import {Box, Button, Container, Fab, Grid, Modal, Stack, TextField, Typography} 
 import AddIcon from '@mui/icons-material/Add';
 import {modalStyle} from "../utils";
 import {FeastComponent} from "./FeastComponent";
+import {Ordination} from "./OrdinationsComponent";
 
 export interface Feast {
     id: number;
     name?: string;
+    ordinations?: Array<Ordination>;
 }
 
 

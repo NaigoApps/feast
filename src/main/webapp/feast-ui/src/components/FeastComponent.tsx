@@ -23,7 +23,7 @@ export function FeastComponent(props: { feast: Feast, onDelete: () => void }) {
                     <div>
                         <ConfirmButton message="Eliminare?" onOk={() => deleteFeast()}
                                        icon={<DeleteIcon/>}></ConfirmButton>
-                        <IconButton onClick={() => navigate(props.feast.id)}>
+                        <IconButton onClick={() => navigate(`./${props.feast.id}`)}>
                             <ArrowForwardIosIcon></ArrowForwardIosIcon>
                         </IconButton>
                     </div>
