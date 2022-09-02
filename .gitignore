@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/webapp/feast-ui/node_modules/
+/src/main/webapp/feast-ui/build/
+/src/main/webapp/feast-ui/node/
