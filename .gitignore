@@ -34,3 +34,6 @@ build/
 /src/main/webapp/feast-ui/node_modules/
 /src/main/webapp/feast-ui/build/
 /src/main/webapp/feast-ui/node/
+/${project.build.directory}/classes/
+/.mvn/wrapper/
+/node/
